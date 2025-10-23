@@ -1,3 +1,4 @@
+package Easy;
 //Find the number that appears once, and other numbers twice.
 public class XOR {
     public static void main(String[] args) {
