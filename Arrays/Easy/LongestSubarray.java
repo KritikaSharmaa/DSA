@@ -33,8 +33,7 @@ public class LongestSubarray {
     //    return maxLength;
     //}
 
-    //Better Case: When nums contains positive.
-    //Optimal Case: when nums contains both positive and negative integers
+    //Better Case: when nums contains both positive and negative integers
     // Time Complexity: 
     //Average - O(n), Each HashMap op ≈ O(1) → n × O(1) 
     //Worst - O(n logn) - if many keys have the same hash (poor hashing),a single bucket could grow long, making operations O(n).
