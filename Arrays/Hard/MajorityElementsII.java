@@ -55,6 +55,8 @@ public class MajorityElementsII {
     //}
 
     //Optimal : Extended Boyer-Moore Voting Algorithm
+    //Time Complexity: O(n) - Single pass through the array + O(N) Iterating over the array again for counting = overall O(2N) ~ o(N).
+    //Space Complexity: O(1) - No extra space used.
     public static List<Integer> majorityElement(int[] nums){
         int minOccurences = nums.length / 3;
         int count1 =0, count2=0;

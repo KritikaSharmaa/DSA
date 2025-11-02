@@ -31,48 +31,46 @@ public class TwoSum {
 
     //Better Approach using HashMap
     // Time Complexity: O(n)
-   // public static int[] twoSum(int[] nums, int target) {
-   //     HashMap<Integer, Integer> map = new HashMap<>();
-//
-   //     for(int i=0; i< nums.length; i++){
-   //         if(map.containsKey(target-nums[i])){
-   //             return new int[]{map.get(target-nums[i]), i};
-   //         }
-//
-   //         if(!map.containsKey(nums[i])){
-   //             map.put(nums[i], i);
-   //         }
-   //     }
-   //     return new int[]{};
+    //public static int[] twoSum(int[] nums, int target) {
+    //    HashMap<Integer, Integer> map = new HashMap<>(); 
+    //    for(int i=0; i< nums.length; i++){
+    //        if(map.containsKey(target-nums[i])){
+    //            return new int[]{map.get(target-nums[i]), i};
+    //        }    
+    //        if(!map.containsKey(nums[i])){
+    //            map.put(nums[i], i);
+    //        }
+    //    }
+    //    return new int[]{};
     //}
 
     //Optimal Approach using Two Pointers (Only works for sorted arrays)
-    public static int[] twoSum(int[] nums, int target) {
+        public static int[] twoSum(int[] nums, int target) {
 
-        nums = java.util.Arrays.stream(nums).sorted().toArray(); // Sorting the array for two-pointer technique
-    
-        for(int i=0;i<nums.length;i++){
-            System.out.print(nums[i] + " ");
-        }
-
-         //-7 -3 1 3 5 6
-        // Output- Indices: [1, 3]
+            nums = java.util.Arrays.stream(nums).sorted().toArray(); // Sorting the array for two-pointer technique
         
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left < right) {
-            
-            int sum = nums[left] + nums[right];
-
-            if (sum == target) {
-                return new int[]{left, right};
-            } else if (sum < target) {
-                left++;
-            } else {
-                right--;
+            for(int i=0;i<nums.length;i++){
+                System.out.print(nums[i] + " ");
             }
+
+             //-7 -3 1 3 5 6
+            // Output- Indices: [1, 3]  
+            int left = 0;
+            int right = nums.length - 1;
+
+            while (left < right) {
+
+                int sum = nums[left] + nums[right];
+
+                if (sum == target) {
+                  return new int[]{left, right};
+              } else if (sum < target) {
+                  left++;
+              } else {
+                  right--;
+              }
+          }
+          return new int[]{-1};
         }
-        return new int[]{-1};
-    }
+
 }
