@@ -59,7 +59,7 @@ public class ThreeSum {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums); // Sorting the array
         while(p1 < nums.length -2){
-            int p2 = p1 +1;
+            int p2 = p1+1;
             int p3 = nums.length -1;
             while(p2 < p3){
                 int sum = nums[p1] + nums[p2] + nums[p3];
