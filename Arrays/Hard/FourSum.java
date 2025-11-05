@@ -64,7 +64,7 @@ public class FourSum {
     //}
 
     //Optimal Approch
-    //Time Complexity - O(N^3)
+    //Time Complexity - O(N^3)s
     //Space Complexity - O(M), where M= no.of quads - its just to store ans not used for solving question.
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<>();
