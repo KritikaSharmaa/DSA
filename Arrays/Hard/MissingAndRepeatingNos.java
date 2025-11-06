@@ -75,6 +75,8 @@ public class MissingAndRepeatingNos {
     //}
 
     //Optimal Approch - Using Simple Maths - Way2 (derive formaula)
+    //Time Complexity - O(n)
+    //Space Complexity - O(1)
     public static int[] findRepeatingAndMissingNos(int[] numbers){
         int n = numbers.length;
         // Expected sum and sum of squares for numbers from 1 to n
