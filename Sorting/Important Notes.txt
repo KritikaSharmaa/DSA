@@ -1,0 +1,5 @@
+Bubble Sort, Selection Sort, Insertion Sort has time complexity of O(N²).   
+|
+|
+V
+To Reduce the Time complexity of Sorting, we'll merge and Quick Sort (After Recursion)

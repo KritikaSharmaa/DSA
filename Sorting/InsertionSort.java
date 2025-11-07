@@ -9,7 +9,7 @@ public class InsertionSort {
         }
     }
 
-    //Insertion Sort - Insertion Sort inserts the card (element) into the correct place among sorted cards.
+    //Insertion Sort - Insertion Sort inserts the card (element) into the correct place among sorted cards/Place element in sorted prefix
     //Time Complexity - ~ O(N²) --> 1 + 2 + 3 + ... + (n−1) = n²/2
     //Space Complexity - O(1)
     public static int[] sort(int[] arr){
