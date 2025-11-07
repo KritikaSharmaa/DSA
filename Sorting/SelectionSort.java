@@ -10,7 +10,7 @@ public class SelectionSort {
     }
 
     //Selection Sort -> select/find smallest & place it to the right place
-    //Time Complexity - O(N^2) - Explained below
+    //Time Complexity - O(N²) Explained below
     //Space Complexity - O(1)
     public static int[] sort(int[] arr){
         //Outer loop → picks each index i as the current position to fill.
