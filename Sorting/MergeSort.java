@@ -9,6 +9,8 @@ public class MergeSort {
         System.out.println("Sorted: "+ Arrays.toString(nums));
     }
 
+    //Time Complexity - O(N * LogN)
+    //Space Complexity  - O(N)
     public static void Sort(int low, int high, int[] nums){
         if(low>=high) return;
 
