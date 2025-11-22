@@ -14,12 +14,14 @@ public class FirstAndLastOccurance {
         System.out.println(Arrays.toString(findFirstAndLastIdx(arr, x)));
     }
 
+    //Time Complexity - O(log N) + O(log N) = O(2 Log N) ~ O(log N)
     public static int[] findFirstAndLastIdx(int[] arr, int x){
         int firstIdx = findFirstIdx(arr, x);
         int lastIdx = findLastIdx(arr, x);
         return new int[] {firstIdx, lastIdx};
     }
 
+    //Time Complexity - O(log N)
     public static int findFirstIdx(int[] arr, int x){
         int low = 0;
         int high = arr.length-1;
@@ -38,6 +40,7 @@ public class FirstAndLastOccurance {
         return res;
     }
 
+    //Time Complexity - O(log N)
     public static int findLastIdx(int[] arr, int x){
         int low = 0;
         int high = arr.length-1;
