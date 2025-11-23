@@ -15,6 +15,10 @@ public class CountRotations {
 	    while(low<=high){
 	        int mid = low + (high - low) / 2;
 
+            if(arr[low]<arr[high] && arr[low]<arr[mid]){
+                return low;
+            }
+
 	        if(arr[low]<=arr[mid]){	    //left sorted
                 if(arr[ridx]>arr[low])  ridx = low;
 	    	    low = mid + 1;
