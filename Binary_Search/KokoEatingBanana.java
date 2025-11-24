@@ -7,6 +7,8 @@ public class KokoEatingBanana {
         System.out.println(minEatingSpeed(piles, h));
     }
 
+    //Time Complexity: O(n log m) where n is number of piles and m is max pile
+    //Space Complexity: O(1)
     public static int minEatingSpeed(int[] piles, int h){
 
         int max = piles[0];
