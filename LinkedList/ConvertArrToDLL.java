@@ -19,7 +19,7 @@ public class ConvertArrToDLL {
         printDoublyLinkedList(head);
         Node newHead = DeletionAtKthPosition(head, 5);
         printDoublyLinkedList(newHead);
-        Node insertHead = InsertAtPosition(head, 2, 99);
+        Node insertHead = InsertAtPosition(head, 5, 99);
         printDoublyLinkedList(insertHead);
     }
 
@@ -46,31 +46,26 @@ public class ConvertArrToDLL {
     }
 
     public static Node DeletionAtKthPosition(Node head, int k){
-        if(head == null || k<=0) return head;
+        if(head == null ) return null;
+
         if(k == 1){
-            Node temp = head;
-            if(head.next != null){
-                head = head.next;
+            head = head.next;
+            if(head != null){
                 head.prev = null;
-            } else {
-                head = null;
             }
             return head;
         }
         Node current = head;
-        Node previous = null;
         int cnt = 1;
         while(current != null){
             if(cnt == k){
-                if(current.next != null){
-                    previous.next = current.next;
-                    current.next.prev = previous;
-                    break;
-                } else {
-                    previous.next = null;
+                if(current.next == null){
+                    current.prev.next = null;
+                }else{
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev;
                 }
             }
-            previous = current;
             current = current.next;
             cnt++;        
         }
@@ -79,34 +74,31 @@ public class ConvertArrToDLL {
 
     public static Node InsertAtPosition(Node head, int position, int element){
         Node newNode = new Node(element);
+
         if(position == 0){
-            newNode.next = head;
             if(head != null){
+                newNode.next = head;
                 head.prev = newNode;
             }
             head = newNode;
             return head;
         }
         Node current = head;
-        Node previous = null;
         int cnt = 0;
-        while(current != null){
+        while(current.next != null){
             if(cnt == position){
-                previous.next = newNode;
-                newNode.prev = previous;
+                current.prev.next = newNode;
+                newNode.prev = current.prev;
                 newNode.next = current;
                 current.prev = newNode;
                 return head;
             }
-            previous = current;
             current = current.next;
             cnt++;
         }
-        // If position is at the end
-        if(cnt == position){
-            previous.next = newNode;
-            newNode.prev = previous;
-        }
+        current.next = newNode;
+        newNode.prev = current;
+
         return head;
     }
 }
