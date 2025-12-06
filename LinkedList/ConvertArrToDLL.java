@@ -19,8 +19,8 @@ public class ConvertArrToDLL {
         printDoublyLinkedList(head);
         Node newHead = DeletionAtKthPosition(head, 5);
         printDoublyLinkedList(newHead);
-        Node insertHead = InsertAtPosition(head, 5, 99);
-        printDoublyLinkedList(insertHead);
+        //Node insertHead = InsertAtPosition(head, 5, 99);
+        //printDoublyLinkedList(insertHead);
     }
 
     public static Node convertArrayToDoublyLinkedList(int[] arr){
@@ -48,27 +48,30 @@ public class ConvertArrToDLL {
     public static Node DeletionAtKthPosition(Node head, int k){
         if(head == null ) return null;
 
-        if(k == 1){
-            head = head.next;
-            if(head != null){
-                head.prev = null;
-            }
-            return head;
-        }
+        int cnt = 0;
         Node current = head;
-        int cnt = 1;
+
         while(current != null){
-            if(cnt == k){
-                if(current.next == null){
-                    current.prev.next = null;
-                }else{
-                    current.prev.next = current.next;
-                    current.next.prev = current.prev;
-                }
-            }
+            cnt++;
+            if(cnt == k) break;
             current = current.next;
-            cnt++;        
         }
+
+        Node prevNode = current.prev;
+        Node nextNode = current.next;
+
+        if(prevNode == null && nextNode == null){
+            head = null;
+        } else if(prevNode == null){
+            nextNode.prev = null;
+            head = nextNode;
+        } else if(nextNode == null){
+            prevNode.next = null;
+        } else {
+            prevNode.next = nextNode;
+            nextNode.prev = prevNode;
+        }
+
         return head;
     }
 
