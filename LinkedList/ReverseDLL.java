@@ -26,27 +26,19 @@ public class ReverseDLL {
     // Space Complexity: O(1)
     public static Node reverse(Node head){
         if(head == null || head.next == null) return head;
+
         Node currNode = head;
+        Node prevNode = null;
 
         while(currNode != null){
-            if(currNode.prev==null){
-                currNode.prev = currNode.next;
-                currNode.next = null;
-            }else if(currNode.next == null){
-                currNode.next = currNode.prev;
-                currNode.prev = null;
-            }else{
-                Node temp = currNode.next;
-                currNode.next = currNode.prev;
-                currNode.prev = temp;
-            }
+            prevNode = currNode.prev;
+            currNode.prev = currNode.next;
+            currNode.next = prevNode;
+
             currNode = currNode.prev;
-            if(currNode != null && currNode.next == null){
-                head = currNode;
-            }
         }
 
-        return head;
+        return prevNode.prev;
     }
 
     public static Node convertArrayToDoublyLinkedList(int[] arr){
