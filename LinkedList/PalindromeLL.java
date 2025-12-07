@@ -21,28 +21,31 @@ public class PalindromeLL {
         System.out.println("Is Palindrome: " + isPalindrome);
     }
 
+    //Time Complexity: O(N/2) + O(N/2) + O(N/2) + O(N/2) = O(2N) ~ O(N)
+    //Space Complexity: O(1)
     public static boolean checkPalindrome(Node head){
         Node slow = head;
 	    Node fast = head;
         
-	    while(fast.next!=null && fast.next.next!=null){
+	    while(fast.next!=null && fast.next.next!=null){     //Time Complexity: O(N/2)
 	    	slow = slow.next;
 	    	fast = fast.next.next;
 	    } 
     
-	    Node newHead = reverseLL(slow.next);
+	    Node newHead = reverseLL(slow.next);    //Reversing second half of linked list --> TC: O(N/2)
 	    Node first = head;
         Node sec = newHead;
 
-	    while(sec != null){
+	    while(sec != null){    //Time Complexity: O(N/2)
 	    	if(sec.data != first.data)
 	    		return false;
+            
 	    	newHead = newHead.next;
             sec = sec.next;
             first = first.next;
 	    }
 
-	    reverseLL(newHead);
+	    reverseLL(newHead);  //Reversing back the second half to restore original list --> TC: O(N/2)
 
 	    return true;
     }
