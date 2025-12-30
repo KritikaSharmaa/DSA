@@ -2,6 +2,9 @@ package Stack;
 
 import java.util.Stack;
 
+//MONOTONIC STACK APPROACH
+//A monotonic stack is a stack that always maintains its elements in increasing or decreasing order.
+//Monotonic stacks are used to efficiently find nearest greater/smaller elements in an array.
 public class NextGreaterElement {
     public static void main(String[] args) {
         int[] nums = {4, 12, 5, 3, 1, 2, 5, 3, 1, 2, 6, 8, 7};
